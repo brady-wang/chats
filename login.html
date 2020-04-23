@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<div style="width:200px;height:200px;margin:200px auto;">
+    <input id="user_name" type="text" placeholder="用户名"><br><br>
+   <input type="submit" value="登录" id="login">
+</div>
+
+<script>
+    $(function(){
+        $("#login").click(function(){
+            name = $("#user_name").val();
+            window.location.href='index.php?user_name='+name
+        })
+
+        $(document).keydown(function(event){
+            if(event.keyCode==13){
+                $("#login").click();
+            }
+        });
+    })
+</script>
+</body>
+</html>
