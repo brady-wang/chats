@@ -4,6 +4,7 @@ $params = $request->get;
 
 if(empty($params['user_name'])){
   echo "<script> location.href='login.html' </script>";
+    return '';
 }
 $user_name = $params['user_name'];
 ?>
@@ -152,8 +153,12 @@ $user_name = $params['user_name'];
         if(data['no'] == nowFd){
             $('.log').append("<div class='right'>我:" +data['msg'] + '</div>');
         } else {
+            if(data.user_name == '系统提示'){
+                $('.log').append("<div  >" + data.user_name+":"+data['msg'] + '</div>');
+            } else {
+                $('.log').append("<div  >" + data.user_name+"("+data['no']+") :"+data['msg'] + '</div>');
+            }
 
-            $('.log').append("<div  >" + data.user_name+"("+data['no']+") :"+data['msg'] + '</div>');
         }
 
 

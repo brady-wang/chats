@@ -13,7 +13,7 @@ class Chat
     public function __construct()
     {
 
-        $this->redis  = new MyRedis("192.168.50.10",6379,'123456');
+        $this->redis  = new MyRedis("192.168.33.10",6379,'123456');
         //实例化swoole_websocket_server并存储在我们Chat类中的属性上，达到单例的设计
         $this->server = new swoole_websocket_server(self::HOST, self::PART);
         //监听连接事件
